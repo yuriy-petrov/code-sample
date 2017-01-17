@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<link href="css/main.css" rel="stylesheet" type="text/css" />
+		<script src="js/jquery.js" type="text/javascript"></script>
+		<script src="js/gauge.js" type="text/javascript"></script>
+		<script src="js/main.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="screen">
+			<div class="access">
+				<div class="timer">
+					<div class="date">21/01/04</div>
+					<div class="time">0:38:11</div>
+				</div>
+				<div class="title">
+					CIMREX ACCESS SCREEN
+				</div>
+				<div class="info">
+					<table>
+						<tbody>
+							<tr>
+								<td>Login</td><td>: Enter Pasword</td>
+							</tr>
+							<tr>
+								<td>Logout</td><td>: Cancel Pasword</td>
+							</tr>
+							<tr>
+								<td>Paswrd</td><td>: Password up to actual level</td>
+							</tr>
+							<tr>
+								<td>Select</td><td>: Got to desired Subsystem</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<ul class="buttons">
+				<li>Login</li>
+				<li>Logout</li>
+				<li>Paswrd</li>
+				<li>Select</li>
+				<li class="empty"></li>
+				<li class="empty"></li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var accessTimer = {
+					init: function(startWith) {
+						//in case you forgot to pass startWith
+						if(typeof startWith == "undefined") {
+							startWith = (new Date()).getTime()/1000;
+						}
+						
+						this.timerElement = $(".timer");
+						this.inverval = 1000; //how often to update the clocks
+						this.ticks = 0;
+						if(this.timerElement.length) {
+							this.startWith = startWith*1000;
+							this.dateElement = this.timerElement.find(".date");
+							this.timeElement = this.timerElement.find(".time");
+							this.initTicker();
+						}
+					},
+					initTicker: function() {
+						var that = this;
+						this.update();
+						this.ticker = setInterval(function() {
+							that.update();
+						}, this.inverval);
+					},
+					update: function() {
+						var now = new Date(this.startWith + this.ticks*this.inverval);
+						
+						var dateStr = ("0" + now.getDate()).slice(-2) + "/" + ("0" + now.getMonth()).slice(-2) + "/" + now.getFullYear().toString().slice(-2);
+						
+						this.dateElement.html(dateStr);
+						
+						var timeStr = ("0" + now.getHours()).slice(-2) + ":" + ("0" +now.getMinutes()).slice(-2) + ":" + ("0" + now.getSeconds()).slice(-2);
+						
+						this.timeElement.html(timeStr);
+						this.ticks++;
+					},
+				};
+				
+				// setting current timestamp in seconds; you can set the time you need if you want
+				var startWith = (new Date()).getTime()/1000; 
+				accessTimer.init(startWith);
+			});
+		</script>
+	</body>
+</html>

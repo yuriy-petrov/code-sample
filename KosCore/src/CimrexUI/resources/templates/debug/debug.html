@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<link href="css/main.css" rel="stylesheet" type="text/css" />
+		<script src="js/jquery.js" type="text/javascript"></script>
+		<script src="js/gauge.js" type="text/javascript"></script>
+		<script src="js/main.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="screen">
+			<div class="setpoint">
+				<div class="title">
+					SETPOINT PRESSURE
+				</div>
+				<table class="data">
+					<tbody>
+						<tr>
+							<td>Actual Value</td>
+							<td>:</td>
+							<td>{{PTGS}}</td>
+							<td>kPa</td>
+						</tr>
+						<tr>
+							<td>Actual Setpoint</td>
+							<td>:</td>
+							<td>--0</td>
+							<td>kPa</td>
+						</tr>
+						<tr>
+							<td>Offset High Alarm</td>
+							<td>:</td>
+							<td>-0</td>
+							<td>kPa</td>
+						</tr>
+						<tr>
+							<td>High Alarm</td>
+							<td>:</td>
+							<td>{{TEST}}</td>
+							<td>kPa</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="speedo-wrap">
+					<canvas id="speedo"></canvas>
+				</div>
+			</div>
+			<ul class="buttons">
+				<li>-10</li>
+				<li>-1</li>
+				<li>+1</li>
+				<li>+10</li>
+				<li>Enter</li>
+				<li>Regul.</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			func = function() {
+				var options;
+				options = {
+					value: {{PTGS}},
+					majorTickLabel: true,
+					min: 0,
+					max: 1000,
+					majorTicks: 5,
+					colorOfFill: [ '#fff', '#eee', '#111', '#fff'],
+					colorOfPointerFill: (255,255,255,0.9) ,
+					colorOfPointerStroke: (255,255,255,0.9) ,
+					colorOfCenterCircleFill: (255,255,255,0.9) ,
+					colorOfCenterCircleStroke: (255,255,255,0.9) ,
+					minorTicks: 4 // small ticks inside each major tick
+				};
+				new Gauge(document.getElementById( 'speedo'), options);
+			};
+			func();
+		});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ExerciseEditorDialog</class>
+ <widget class="QDialog" name="ExerciseEditorDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>973</width>
+    <height>662</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Exercise editor</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Default scheme:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="lineEditTitle"/>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Title:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="comboBoxSchemeKey"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,1,1,2">
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
+        <string>Initial mode</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_9">
+        <item>
+         <widget class="QComboBox" name="comboBoxMode"/>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="title">
+        <string>Main power</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_18">
+        <item>
+         <widget class="QComboBox" name="comboBoxMainPower">
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>Power on</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Power off</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_3">
+       <property name="title">
+        <string>Emergency button</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_20">
+        <item>
+         <widget class="QComboBox" name="comboBoxEmergencyButton">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>Released</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Pressed</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabInitialValues">
+      <attribute name="title">
+       <string>Initial values</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QTabWidget" name="tabWidgetInitialValues">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="tabValues">
+          <attribute name="title">
+           <string>Values</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_10">
+           <item>
+            <widget class="QTableView" name="tableViewInitValues"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tabValves">
+          <attribute name="title">
+           <string>Valves</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_11">
+           <item>
+            <widget class="QTableView" name="tableViewValves"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tabSeparators">
+          <attribute name="title">
+           <string>Separators</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_12">
+           <item>
+            <widget class="QTableView" name="tableViewSeparators"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tabPipes">
+          <attribute name="title">
+           <string>Pipes</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_13">
+           <item>
+            <widget class="QTableView" name="tableViewPipes"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tabWaterLocks">
+          <attribute name="title">
+           <string>Water locks</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_14">
+           <item>
+            <widget class="QTableView" name="tableViewWaterLocks"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tabRinsers">
+          <attribute name="title">
+           <string>Rinsers</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_15">
+           <item>
+            <widget class="QTableView" name="tableViewRinsers"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tabCoalescentFilters">
+          <attribute name="title">
+           <string>Coalscent filters</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_17">
+           <item>
+            <widget class="QTableView" name="tableViewCoalescentFilters"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tabHeatExchangers">
+          <attribute name="title">
+           <string>Heat exchangers</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_16">
+           <item>
+            <widget class="QTableView" name="tableViewHeatExchangers"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tabCellStackEnable">
+          <attribute name="title">
+           <string>Cell stack enable</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_19">
+           <item>
+            <widget class="QTableView" name="tableViewCSEnable"/>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabConditions">
+      <attribute name="title">
+       <string>Conditions</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QTabWidget" name="tabWidgetConditions">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="tabBasicConds">
+          <attribute name="title">
+           <string>Basic</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QTableView" name="tableViewBasicConds"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tabN2PurgeConds">
+          <attribute name="title">
+           <string>N2 purge</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QTableView" name="tableViewN2PurgeConds"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tabH2ProductionConds">
+          <attribute name="title">
+           <string>H2 production</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QTableView" name="tableViewH2ProdConds"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tabCS1Conds">
+          <attribute name="title">
+           <string>CS1</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="QTableView" name="tableViewCs1Conds"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tabCS2Conds">
+          <attribute name="title">
+           <string>CS2</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <widget class="QTableView" name="tableViewCs2Conds"/>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabEventFilters">
+      <attribute name="title">
+       <string>Event filters</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_21">
+       <item>
+        <widget class="QTabWidget" name="twEventFilters">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="tabTages">
+          <attribute name="title">
+           <string>Stages</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="EventFilterProviderWidget" name="wStagesEventFilterProvider" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tabModes">
+          <attribute name="title">
+           <string>Modes</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="EventFilterProviderWidget" name="wModesEventFilterProvider" native="true"/>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok|QDialogButtonBox::Reset</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>EventFilterProviderWidget</class>
+   <extends>QWidget</extends>
+   <header>EventFilterProviderWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ExerciseEditorDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ExerciseEditorDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

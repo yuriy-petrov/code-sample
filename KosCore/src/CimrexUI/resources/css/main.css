@@ -1,0 +1,883 @@
+@font-face {
+    font-family: HM9;
+    src: url(../fonts/HM9.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    outline:none;
+}
+html {
+    height: 100%;
+    font-size: 100%;
+}
+body {
+    height: 100%;
+	background-color: #000;
+}
+body, input, textarea, select{
+    font-size: 14px;
+    font-family: HM9, sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight:normal;
+}
+li {
+    list-style: none;
+}
+table {
+	border-collapse: collapse;
+}
+table .l {
+	text-align: left;
+}
+table .r {
+	text-align: right;
+}
+table .c {
+	text-align: center;
+}
+/* html (begin) */
+article,aside,canvas,details,embed,figcaption,figure,footer,header,hgroup,menu,nav,section,summary {display: block;}
+command,datalist,keygen,mark,meter,progress,rp,rt,ruby,time,wbr {display: inline;}
+/* html (end) */
+
+.screen {
+	width: 400px;
+	height: 222px;
+	display: block;
+	background-color: #fff;
+	position: relative;
+	overflow: hidden;
+}
+
+.logo {
+	position: absolute;
+	left: 55px;
+	top: 50px;
+	width: 59px;
+	height: 60px;
+	background: url(../i/logo.png) 0 0 no-repeat;
+}
+
+.company {
+	margin-left: 125px;
+	padding-top: 40px;
+}
+
+.company .spacer {
+	display: inline-block;
+	width: 6px;
+	height: 1px;
+}
+.company .spacer.twice {
+	width: 12px;
+}
+.company .site {
+	margin-top: 20px;
+}
+
+.buttons {
+	position: absolute;
+	width: 100%;
+	bottom: 3px;
+	left: 0;
+	display: table;
+}
+
+.buttons li{
+	display: table-cell;
+	text-align: center;
+	background: #000;
+	color: white;
+	border-right: 2px solid white;
+	width: 63px;
+}
+
+.buttons li.empty{
+	background: transparent;
+}
+.buttons li:first-child{ 
+	border-left: 4px solid white;
+}
+
+.buttons li:last-child{ 
+	border-right: 4px solid white;
+}
+
+.left-buttons {
+	position: absolute;
+	width: 120px;
+	top: 0;
+	left: 0;
+	margin-left: 4px;
+}
+
+.left-buttons li{
+	text-align: center;
+	border-right: 2px solid white;
+	height: 40px;
+	line-height:40px;
+	margin-bottom: 15px;
+	border: 1px solid black;
+}
+.left-buttons li:first-child{
+	margin-top: 7px;
+}
+.left-buttons li:last-child{
+	height: 20px;
+	line-height:20px;
+	margin-bottom: 0;
+}
+
+/* access */
+.access {
+	padding-top: 15px;
+}
+.access .timer {
+	display: block;
+	width: 170px;
+	margin: 0 auto;
+	border: 3px ridge black; 
+	padding: 0 2px;
+}
+.access .timer .date {
+	display: inline-block;
+}
+.access .timer .time {
+	float: right;
+}
+.access .title {
+	text-align: center;
+	margin: 20px 0;
+}
+.access .info {
+	border: 1px solid black;
+	margin: 0 20px;
+	padding: 10px;
+}
+
+/* login */
+.login,
+.logout {
+	text-align: center;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.logout {
+	margin-left: -70px;
+}
+.login .title,
+.logout .title {
+	text-align: center;
+	margin-bottom: 10px;
+}
+.login .info,
+.logout .info  {
+	border: 1px solid black;
+	padding: 3px;
+	width: 150px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* select */
+.select {
+	padding: 5px;
+}
+
+.select .container{
+	padding: 0px;
+	border: 1px solid black;
+	text-align:center;
+	height: 195px;
+	position: relative;
+}
+
+.select .title {
+	border-bottom: 1px solid black;
+	padding: 0 8px;
+	text-align: center;
+	font-size: large;
+}
+
+.select .options {
+	width: 100%;
+	margin-left: 5px;
+	font-size: 20px;
+	border-collapse: separate; 
+	border-spacing: 4px;
+}
+
+.select .options tr{
+	text-align: left;
+}
+
+.select .clock {
+	position: absolute;
+	right: 15px;
+	top: 25px;
+	width: 150px;
+	height: 150px;
+	background: url(../i/clock.png);
+	display: block;
+}
+.select .clock .arrow-h{
+	background: #000;
+	width: 10px;
+	height: 45px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -5px;
+	margin-top: -4px;
+	-ms-transform-origin: 5px 4px; /* IE 9 */
+	-webkit-transform-origin: 5px 4px; /* Chrome, Safari, Opera */
+	transform-origin: 5px 4px;
+	z-index:2;
+}
+.select .clock .arrow-h:after{
+	content: "";
+	width: 0;
+	height: 0;
+	display:block;
+	position: absolute;
+	left: 0;
+	top: 45px;
+	border-style: solid;
+	border-width: 5px 5px 0 5px;
+	border-color: #000 transparent transparent transparent;
+}
+.select .clock .arrow-m{
+	background: #000;
+	width: 8px;
+	height: 65px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -4px;
+	margin-top: -4px;
+	-ms-transform-origin: 4px 4px; /* IE 9 */
+	-webkit-transform-origin: 4px 4px; /* Chrome, Safari, Opera */
+	transform-origin: 4px 4px;
+	transform: rotateZ(270deg);
+	z-index:1;
+}
+.select .clock .arrow-m:after{
+	content: "";
+	width: 0;
+	height: 0;
+	display:block;
+	position: absolute;
+	left: 0;
+	top: 65px;
+	border-style: solid;
+	border-width: 4px 4px 0 4px;
+	border-color: #000 transparent transparent transparent;
+}
+/* electro */
+.electro {
+	padding: 5px;
+}
+
+.electro .container{
+	padding: 0px;
+	border: 1px solid black;
+	text-align:center;
+	height: 195px;
+}
+.electro .title {
+	border-bottom: 1px solid black;
+	padding: 0 8px;
+	text-align: center;
+	font-size: large;
+}
+
+.electro .title .left{
+	display: inline-block;
+	vertical-align: top;
+	width: 260px;
+}
+
+.electro .title .right {
+	border-left: 1px solid black;
+	display: inline-block;
+	vertical-align: top;
+	width: 100px;
+}
+
+.electro .data{
+	position: relative;
+	height: 180px;
+}
+
+.electro .big {
+	display: inline-block;
+	width: 270px;
+	font-size: 26px;
+    word-wrap: break-word;
+	margin: 10px 0;
+}
+.electro .small-wrap {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+}
+
+.electro .small {
+	margin-bottom: 10px;
+	text-align: right;
+	padding-right: 20;
+	padding-top: 10;
+}
+
+.electro .small .left {
+	word-wrap: break-word;
+	display: inline-block;
+	vertical-align: top;
+	width: 130px;
+}
+
+.electro .small .right {
+	word-wrap: break-word;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.electro .container .bottom-table {
+	width: 100%;
+	margin-left: 5px;
+	font-size: 15px;
+	border-collapse: separate; 
+	text-align: left;
+}
+/* alarms */
+.alarms {
+	padding: 10px;
+	text-align: right;
+}
+.alarms .title {
+	display: block;
+	padding: 3px 5px;
+	font-size: 16px;
+	border: 2px solid black;
+	width: 220px;
+	margin: 0 auto 20px;
+	text-align: center;
+}
+.alarms table td {
+	padding-right: 10px;
+}
+.alarms .box {
+	border: 1px solid black;
+	display: inline-block;
+	padding: 2px 6px;
+	margin-top: 15px;
+}
+
+/* start-conditions */
+.start-conditions {
+	padding: 0 2px 5px 140px;
+}
+.start-conditions .title {
+	width: 100%;
+}
+.start-conditions .title td{
+	border: 1px solid black;
+	text-align: center;
+	padding: 2px 0;
+}
+.start-conditions .data {
+	width: 100%;
+}
+
+/* one-more */
+.one-more {
+	padding: 5px;
+}
+.one-more .header {
+	border: 1px solid black;
+	padding: 0 4px;
+}
+.one-more .header .timer,
+.one-more .timer .weekday,
+.one-more .timer .date,
+.one-more .timer .time,
+.one-more .header .text,
+.one-more .header .number
+{
+display: inline-block;
+}
+.one-more .header .text {
+margin-left: 80px;
+}
+.one-more .header .number {
+float:right;
+}
+.one-more .data {
+	width: 380px;
+}
+.one-more > .data {
+	width: 385px;
+	margin-left:5px;
+	margin-top: 5px;
+}
+.one-more > .data tr .mem:last-child {
+	border: 1px solid black;
+	padding-right: 0;
+	text-align: center;
+	width: 50px;
+}
+.one-more .header .data tr td:last-child {
+	width: 100px;
+	text-align: right;
+}
+.one-more > .data tr td:last-child {
+	text-align: right;
+	padding-right: 5px;
+}
+
+/* setpoint */
+.setpoint {
+	padding: 5px;
+}
+
+.setpoint .container{
+	padding: 0px;
+	border: 1px solid black;
+	text-align:center;
+	height: 195px;
+	position: relative;
+}
+
+.setpoint .title {
+	border-bottom: 1px solid black;
+	padding: 0 8px;
+	text-align: center;
+	font-size: large;
+}
+
+.setpoint .second-title {
+	border: 1px solid black;
+	padding: 0 8px;
+	text-align: center;
+	font-size: large;
+	border-top-width: 0px;
+	width: 60px;
+	/* position: relative; */
+	/* align-content: center; */
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.setpoint .data{
+	width: 237px;
+	margin-left: 5px;
+	font-size: 16px;
+	border-collapse: separate;
+	border-spacing: 5px;
+}
+
+.setpoint .data td {
+	padding: 0 3px;
+}
+.setpoint .data td:first-child{
+	padding-left:0;
+}
+.setpoint .data td:nth-child(3n) {
+	text-align: right;
+}
+
+.setpoint .speedo-wrap {
+	position: absolute;
+	right: 4px;
+	top: 20px;
+	width: 150px;
+	height: 150px;
+	display: block;
+	margin-top: 10px;
+}
+
+.electrolyzer-screen .title,
+.electrolyzer-screen .title-dashes {
+	margin-top: 4px;
+	font-size: 18px;
+	width: 100%;
+	text-align: center;
+}
+.electrolyzer-screen .title-dashes {
+	margin-top: -8px;
+}
+.electrolyzer-screen .top-table {
+	padding:0;
+	margin: -5px auto 0 auto;
+	line-height: 80%;
+}
+.electrolyzer-screen .top-table td:first-child {
+	width: 58px;
+}
+.electrolyzer-screen .top-table td.last {
+	width: 58px;
+	padding-right: 26px;
+}
+.electrolyzer-screen .bottom-table {
+	line-height: 80%;
+	padding:0;
+	margin: 0 auto;
+	width: 338px;
+}
+.electrolyzer-screen .bottom-table td:nth-child(3) {
+	padding-right: 10px;
+}
+
+.process .options {
+	width: 100%;
+	margin-left: 5px;
+	font-size: 20px;
+	border-collapse: separate; 
+	border-spacing: 4px;
+}
+
+.process-screen .title,
+.process-screen .title-dashes {
+	margin-top: 4px;
+	font-size: 18px;
+	width: 100%;
+	text-align: center;
+}
+.process-screen .title-dashes {
+	margin-top: -8px;
+}
+.process-screen .bottom-table {
+	line-height: 80%;
+	padding:0;
+	margin: 10px auto 0 auto;
+	width: 380px;
+}
+.process-screen .bottom-table td:nth-child(3) {
+	padding-right: 10px;
+}
+
+.graph-pth-screen .right-column {
+	position: absolute;
+	right: 4px;
+	top: 10px;
+	width: 70px;
+	border: 1px solid black;
+	height: 190px;
+	text-align: center;
+}
+.graph-pth-screen .right-column .column-header{
+	border-bottom: 1px solid black;
+	font-size: 18px;
+}
+.graph-pth-screen .right-column .column-body{
+	padding-top: 6px;
+	font-size: 16px;
+}
+.graph-pth-screen .graph {
+	height: 215px;
+	margin-top: 10px;
+	margin-left: 5px;
+}
+
+.temperature-electrolyte-tte .title {
+	border: 1px solid black;
+	padding: 0 8px;
+	margin: 4px;
+	text-align: center;
+}
+.temperature-electrolyte-tte .graph {
+	height: 215px;
+	margin-top: 8px;
+	margin-left: 5px;
+}
+.temperature-electrolyte-tte .right-column {
+	position: absolute;
+	right: 4px;
+	top: 30px;
+	width: 70px;
+	border: 1px solid black;
+	height: 150px;
+	text-align: center;
+}
+.temperature-electrolyte-tte .right-column .column-top{
+	border-bottom: 1px solid black;
+	font-size: 16px;
+	height: 70px;
+	padding-top: 5px;
+}
+.temperature-electrolyte-tte .right-column .column-bottom{
+	padding-top: 5px;
+	font-size: 16px;
+	height: 70px;
+}
+
+.level-measurement-ho .title {
+	border: 1px solid black;
+	padding: 0 8px;
+	margin: 4px;
+	text-align: center;
+}
+.level-measurement-ho .graph {
+	height: 215px;
+	margin-top: 8px;
+	margin-left: 5px;
+}
+.level-measurement-ho .right-column {
+	position: absolute;
+	right: 4px;
+	top: 20px;
+	width: 70px;
+	border: 1px solid black;
+	height: 160px;
+	text-align: center;
+	padding-top: 5px;
+	font-size: 16px;
+}
+
+.hydrogen-detection-in-oxygen .title {
+	border: 1px solid black;
+	padding: 3px 10px;
+	margin: 4px;
+	text-align: center;
+}
+.hydrogen-detection-in-oxygen .sub-title {
+	margin-left: 77px;
+}
+.hydrogen-detection-in-oxygen .sub-title span{
+	margin-left: 47px;
+}
+.hydrogen-detection-in-oxygen .graph {
+	height: 215px;
+	margin-top: 4px;
+	margin-left: 5px;
+}
+
+.modules {
+	padding: 5px;
+}
+.modules .title {
+	border: 1px solid black;
+	padding: 0 8px;
+	text-align: center;
+	font-size: large;
+}
+
+.modules .title .left{
+	display: inline-block;
+	vertical-align: top;
+	width: 250px;
+}
+
+.modules .title .right {
+	border-left: 1px solid black;
+	display: inline-block;
+	vertical-align: top;
+	width: 100px;
+} 
+.modules .container {
+	padding: 0px;
+	/* border: 1px solid black; */
+	text-align: center;
+	height: 195px;
+}
+
+.modules .list {
+/*	margin: 6px 10px; */
+	text-align: center;
+}
+
+.modules .list > div{
+	border: 1px solid black;
+	display: inline-block;
+	width: 194px;
+	/* margin-bottom: 6px; */
+	margin-right: 0px;
+	height: 88px;
+	vertical-align: top;
+	padding-right: 0px;
+	border-top-width: 0px;
+}
+.modules .list > div:nth-child(2n) {
+	margin-right: 0;
+}
+.modules .list > div .module-title {
+	font-size: 16px;
+	margin-top: 2px;
+	padding-top: 20px;
+}
+.modules .list > div .status {
+	font-size: 22px;
+	font-weight: bold;
+}
+
+
+/* log */
+.log {
+	padding: 5px;
+}
+.log .header {
+	border-bottom: 1px solid black;
+	padding: 0 4px 4px 4px;
+}
+.log .header .timer,
+.log .timer .weekday,
+.log .timer .date,
+.log .timer .time,
+.log .header .text
+{
+	display: inline-block;
+}
+.log .header .text {
+	margin-left: 80px;
+	border-left: 1px solid black;
+	padding-left: 10px;
+}
+.log .data {
+	width: 380px;
+	border-bottom: 1px solid black;
+	height: 80%;
+}
+.log .data td {
+	padding: 0 3px;
+	border-right: 1px solid black;
+	width: 1px;
+	word-break: keep-all;
+}
+.log .data td:last-child {
+	border-right: 0;
+	width: auto;
+}
+
+.depres {
+	padding: 5px;
+}
+.depres .container{
+	padding: 0px;
+	border: 1px solid black;
+	text-align:center;
+	height: 195px;
+	position: relative;
+}
+
+.depres .title {
+	border-bottom: 1px solid black;
+	padding: 0 8px;
+	text-align: center;
+	font-size: large;
+}
+
+.depres .wrapper {
+	padding-top: 20px;
+}
+
+.depres .wrapper .left {
+	display: inline-block;
+	width: 60%;
+	text-align: right;
+	font-size: x-large;
+}
+
+.depres .wrapper .right {
+	display: inline-block;
+	width: 40%;
+	text-align: center;
+	font-size: x-large;
+
+}
+
+/*Production*/
+.production {
+	padding: 5px;
+}
+
+.production .container{
+	padding: 0px;
+	border: 1px solid black;
+	text-align:center;
+	height: 195px;
+	position: relative;
+}
+
+.production .title {
+	border-bottom: 1px solid black;
+	padding: 0 8px;
+	text-align: center;
+	font-size: large;
+}
+
+.production .second-title {
+	border: 1px solid black;
+	padding: 0 8px;
+	text-align: center;
+	font-size: large;
+	border-top-width: 0px;
+	width: 60px;
+	/* position: relative; */
+	/* align-content: center; */
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.production .options {
+	width: 100%;
+	margin-left: 5px;
+	font-size: 20px;
+	border-collapse: separate; 
+	border-spacing: 4px;
+}
+
+.production .options tr{
+	text-align: left;
+}
+
+/* water */
+.water {
+	padding: 5px;
+}
+
+.water .container{
+	padding: 0px;
+	border: 1px solid black;
+	text-align:center;
+	height: 195px;
+	position: relative;
+}
+
+.water .title {
+	border-bottom: 1px solid black;
+	padding: 0 8px;
+	text-align: center;
+	font-size: medium;
+}
+
+.water .title .left{
+	display: inline-block;
+	vertical-align: top;
+	width: 250px;
+}
+
+.water .title .right {
+	border-left: 1px solid black;
+	display: inline-block;
+	vertical-align: top;
+	width: 100px;
+} 
+
+.water .options {
+	width: 100%;
+	margin-left: 5px;
+	font-size: 20px;
+	border-collapse: separate; 
+	border-spacing: 4px;
+}
+
+.water .options tr{
+	text-align: left;
+}

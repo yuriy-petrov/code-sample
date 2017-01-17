@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="css/main.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+	      function draw(){
+	        var canvas = document.getElementById('tutorial');
+	        if (canvas.getContext){
+	          var ctx = canvas.getContext('2d');
+	          var pos = { "x" : 40, "y" : 40};
+	          var state = true;
+	          var value = 100;
+	          
+	          drawFatLabels(ctx);
+	          drawLabels(ctx);
+	          drawValues(ctx);
+	          drawBigLabels(ctx);
+	          drawScheem(ctx);
+	          //drawValve(ctx, pos, state);
+	          //drawSeparator(ctx, {"x" : 150, "y" : 100}, value);
+	        }
+	      }
+	      function drawFatLabels(ctx) {
+	      	ctx.font='bold 18px HM9';
+	        ctx.fillText('O2', 60, 140);
+	        ctx.fillText('H2', 322, 140);
+	      }
+
+	      function drawScheem(ctx) {
+
+	      	var value_1 = {{MV1aO_A}};
+	      	var value_2 = {{MV1bO_A}};
+	      	var value_3 = {{MV_O_HTO}};
+	      	var value_4 = {{MV_N2}};
+	      	var value_5 = {{MV1aH_U}};
+	      	var value_6 = {{MV1bH_U}};
+	      	var value_7 = {{MV1H_A}};
+
+	      	/// first
+	      	ctx.beginPath();
+	      	ctx.moveTo(70, 15);
+	      	ctx.lineTo(90, 15);
+	      	ctx.stroke();
+
+	      	drawValve(ctx, 98, 15, value_1);
+	      	
+	      	ctx.beginPath();
+	      	ctx.moveTo(106, 15);
+	      	ctx.lineTo(130, 15);
+		  	ctx.stroke();
+
+		  	ctx.beginPath();
+		  	ctx.moveTo(130, 10);
+		  	ctx.lineTo(130, 95);
+		  	ctx.lineWidth = 6;
+		  	ctx.stroke();
+
+		  	ctx.lineWidth = 1;
+		  	ctx.beginPath();
+		  	ctx.moveTo(130, 95);
+		  	ctx.lineTo(130, 115);
+		  	ctx.stroke();
+		  	/// second
+		  	
+		  	ctx.beginPath();
+	      	ctx.moveTo(70, 45);
+	      	ctx.lineTo(85, 45);
+	      	ctx.stroke();
+
+	      	drawValve(ctx, 93, 45, value_2);
+
+		  	ctx.beginPath();
+	      	ctx.moveTo(101, 45);
+	      	ctx.lineTo(130, 45);
+	      	ctx.stroke();
+
+	      	/// third
+		  	ctx.beginPath();
+	      	ctx.moveTo(70, 75);
+	      	ctx.lineTo(95, 75);
+	      	ctx.stroke();
+
+	      	drawValve(ctx, 103, 75, value_3);
+
+		  	ctx.beginPath();
+	      	ctx.moveTo(111, 75);
+	      	ctx.lineTo(130, 75);
+	      	ctx.stroke();
+
+	      	drawSeparator(ctx, 130, 135, {{GAS_SEP_O}});
+
+	      	drawSeparator(ctx, 270, 135, {{GAS_SEP_H}});
+
+	      	ctx.beginPath();
+	      	ctx.moveTo(160, 115);
+	      	ctx.lineTo(160, 100);
+	      	ctx.lineTo(240, 100);
+	      	ctx.lineTo(240, 115);
+	      	ctx.moveTo(200, 100);
+	      	ctx.lineTo(200, 80);
+	      	ctx.lineTo(210, 80);
+	      	ctx.stroke();
+
+	      	drawValve(ctx, 218, 80, value_4);
+
+	      	ctx.beginPath();
+	      	ctx.moveTo(160, 155);
+	      	ctx.lineTo(160, 165);
+	      	ctx.lineTo(240, 165);
+	      	ctx.lineTo(240, 155);
+	      	ctx.stroke();
+
+	      	//LAST
+	      	ctx.beginPath();
+	      	ctx.moveTo(270, 115);
+	      	ctx.lineTo(270, 100);
+	      	ctx.stroke();
+
+	      	ctx.beginPath();
+	      	ctx.moveTo(270, 100);
+		  	ctx.lineTo(270, 75);
+		  	ctx.lineWidth = 20;
+		  	ctx.stroke();
+		  	ctx.lineWidth = 1;
+
+		  	ctx.beginPath();
+	      	ctx.moveTo(270, 75);
+	      	ctx.lineTo(270, 65);
+	      	ctx.stroke();
+
+	      	ctx.beginPath();
+	      	ctx.moveTo(270, 65);
+		  	ctx.lineTo(270, 10);
+		  	ctx.lineWidth = 6;
+		  	ctx.stroke();
+		  	ctx.lineWidth = 1;
+
+		  	////others 1
+		  	ctx.beginPath();
+	      	ctx.moveTo(270, 55);
+		  	ctx.lineTo(280, 55);
+		  	ctx.stroke();
+
+		  	drawValve(ctx, 288, 55, value_5);
+
+		  	ctx.beginPath();
+	      	ctx.moveTo(296, 55);
+		  	ctx.lineTo(320, 55);
+		  	ctx.stroke();
+
+		  	////others 2
+		  	ctx.beginPath();
+	      	ctx.moveTo(270, 35);
+		  	ctx.lineTo(300, 35);
+		  	ctx.stroke();
+
+		  	drawValve(ctx, 308, 35, value_6);
+
+		  	ctx.beginPath();
+	      	ctx.moveTo(316, 35);
+		  	ctx.lineTo(320, 35);
+		  	ctx.stroke();
+
+		  	////others 3
+		  	ctx.beginPath();
+	      	ctx.moveTo(270, 15);
+		  	ctx.lineTo(280, 15);
+		  	ctx.stroke();
+
+		  	drawValve(ctx, 288, 15, value_7);
+
+		  	ctx.beginPath();
+	      	ctx.moveTo(296, 15);
+		  	ctx.lineTo(320, 15);
+		  	ctx.stroke();
+	      }
+	      function drawBigLabels(ctx) {
+	      	ctx.font='18px HM9';
+	        ctx.fillText('HTO', 20, 100);
+	        ctx.fillText('OTA', 330, 90);	
+	      }
+	      function drawValues(ctx) {
+	      	ctx.font='18px HM9';
+	      	ctx.fillText('{{VALVE_1}}%', 20, 35);
+	        ctx.fillText('{{HTO}}%', 20, 115);
+	        ctx.fillText('{{OTA}}%', 330, 110);
+	        ctx.fillText('13 000 Nm3/h', 145, 40);
+	        ctx.fillText('{{PTGS}} kPa', 160, 55);
+	        ctx.fillText('{{LTO}} mm', 65, 170);
+	        ctx.fillText('{{LTH}} mm', 270, 170);
+	      }
+	      function drawLabels(ctx) {
+	      	ctx.font='14px HM9';
+	        ctx.fillText('MVa O-A', 10, 20);
+	        ctx.fillText('MVb O-A', 10, 50);
+	        ctx.fillText('MV O-HTO', 10, 80);
+
+	        ctx.fillText('MVa H-V', 330, 20);
+	        ctx.fillText('MVb H-V', 330, 40);
+	        ctx.fillText('MV H-A', 330, 60);
+
+	        ctx.fillText('MV N', 225, 72);
+	      }
+	      function drawValve(ctx, x, y , state){
+	      	ctx.beginPath();
+			ctx.moveTo(x, y);
+			ctx.lineTo(x + 8, y - 8);
+			ctx.lineTo(x + 8, y + 8);
+			ctx.lineTo(x - 8, y - 8);
+			ctx.lineTo(x - 8, y + 8);
+			ctx.lineTo(x, y);
+			state ? ctx.fill() : ctx.stroke() ;
+			ctx.lineTo(x , y - 12);
+			ctx.lineTo(x + 4, y - 12);
+			ctx.stroke();
+	      }
+	      function drawSeparator(ctx, x, y, value){
+	      	ctx.beginPath();
+	      	var maxValue = 100;
+	      	var width = 100;
+	      	var height = 40;
+	      	var fillHeight = height / maxValue * value;
+			ctx.strokeRect(x - width/2, y - height/2, width, height);
+			ctx.fillRect(x - width/2, y + (height/2 - fillHeight), width, fillHeight);
+	      }
+	    </script>
+	    <style type="text/css">
+
+	    </style>
+	</head>
+	<body  onload="draw();">
+		<div class="screen">
+			<div class="water">
+				<div class="container">
+					<div class="title">
+		                <div class="left">GASSEPARATORS</div>
+		                <div class="right">Unit A</div>
+		            </div>
+		            <canvas id="tutorial" width="390" height="180"></canvas>
+				</div>
+			</div>
+			<ul class="buttons">
+				<li>CS 1/2</li>
+				<li class="empty"></li>
+				<li class="empty"></li>
+				<li class="empty"></li>
+				<li class="empty"></li>
+				<li class="empty"></li>
+			</ul>
+		</div>
+	</body>
+</html>

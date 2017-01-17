@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="css/main.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+	      function draw(){
+	        var canvas = document.getElementById('tutorial');
+	        if (canvas.getContext){
+	          var ctx = canvas.getContext('2d');
+
+	          drawLabels(ctx);
+
+	          ctx.beginPath();
+			  ctx.strokeRect(0, 85, 120, 20);
+			  ctx.strokeRect(45, 25, 170, 20);
+			  ctx.strokeRect(215, 25, 75, 20);
+	          //drawValues(ctx);
+	          drawScheem(ctx);
+
+	          drawBreakTank(ctx, 335, 105, 35);
+	          drawSmalLabels(ctx);
+	          drawValues(ctx);
+	        }
+	      }
+	      function drawLabels(ctx) {
+	      	ctx.font='18px HM9';
+	        ctx.fillText('BT in Standby / Enable', 100, 20);
+	        ctx.fillText('BT Fill Enabled', 50, 40);
+	        ctx.fillText('Demin Water', 5, 100);
+	        ctx.fillText('ct', 150, 90);
+	      }
+	      function drawSmalLabels(ctx) {
+	      	ctx.font='14px HM9';
+	        ctx.fillText('Breaktank', 305, 50);
+	        ctx.fillText('Drain', 240, 150);
+	      }
+	      function drawScheem(ctx) {
+
+	      	/// first
+	      	ctx.beginPath();
+	      	ctx.moveTo(120, 85);
+	      	ctx.lineTo(145, 85);
+	      	ctx.stroke();
+
+	      	ctx.beginPath();
+	      	ctx.arc(160, 85, 15, 0, 360);
+	      	ctx.stroke();
+
+	      	ctx.beginPath();
+	      	ctx.moveTo(175, 85);
+	      	ctx.lineTo(230, 85);
+	      	ctx.stroke();
+
+	      	drawValve(ctx, 238, 85);
+
+	      	ctx.beginPath();
+	      	ctx.moveTo(246, 85);
+	      	ctx.lineTo(265, 85);
+	      	ctx.stroke();
+
+			ctx.beginPath();
+	      	ctx.moveTo(265, 80);
+			ctx.lineTo(285, 85);
+			ctx.lineTo(265, 90);
+			ctx.fill();
+
+			ctx.beginPath();
+	      	ctx.moveTo(190, 85);
+	      	ctx.lineTo(190, 90);
+	      	ctx.stroke();
+
+	      	drawValveRotated(ctx, 190, 98);
+
+	      	ctx.beginPath();
+	      	ctx.moveTo(190, 106);
+	      	ctx.lineTo(190, 115);
+	      	ctx.lineTo(265, 115);
+	      	ctx.lineTo(265, 125);
+	      	ctx.stroke();
+
+	      	ctx.beginPath();
+	      	ctx.moveTo(270, 125);
+			ctx.lineTo(265, 140);
+			ctx.lineTo(260, 125);
+			ctx.fill();
+	      }
+
+	      function drawValues(ctx) {
+	      	ctx.font='18px HM9';
+	      	ctx.fillText('0 s', 250, 40);
+	        ctx.fillText('1.0 mS', 130, 65);
+	      }
+	      function drawValveRotated(ctx, x, y , state){
+	      	ctx.beginPath();
+			ctx.moveTo(x, y);
+			ctx.lineTo(x + 8, y + 8);
+			ctx.lineTo(x - 8, y + 8);
+			ctx.lineTo(x + 8, y - 8);
+			ctx.lineTo(x - 8, y - 8);
+			ctx.lineTo(x, y);
+			state ? ctx.fill() : ctx.stroke() ;
+			ctx.lineTo(x + 12, y);
+			ctx.lineTo(x + 12, y + 4);
+			ctx.stroke();
+	      }
+	      
+	      function drawValve(ctx, x, y , state){
+	      	ctx.beginPath();
+			ctx.moveTo(x, y);
+			ctx.lineTo(x + 8, y - 8);
+			ctx.lineTo(x + 8, y + 8);
+			ctx.lineTo(x - 8, y - 8);
+			ctx.lineTo(x - 8, y + 8);
+			ctx.lineTo(x, y);
+			state ? ctx.fill() : ctx.stroke() ;
+			ctx.lineTo(x , y - 12);
+			ctx.lineTo(x + 4, y - 12);
+			ctx.stroke();
+	      }
+	      function drawBreakTank(ctx, x, y, value){
+	      	ctx.beginPath();
+	      	var maxValue = 100;
+	      	var width = 100;
+	      	var height = 100;
+	      	var fillHeight = height / maxValue * value;
+			ctx.strokeRect(x - width/2, y - height/2, width, height);
+			ctx.fillRect(x - width/2, y + (height/2 - fillHeight), width, fillHeight);
+	      }
+	    </script>
+	    <style type="text/css">
+
+	    </style>
+	</head>
+	<body  onload="draw();">
+		<div class="screen">
+			<div class="water">
+				<div class="container">
+					<div class="title">
+		                <div class="left">BREAK TANK HYDROGEN</div>
+		                <div class="right">Unit A</div>
+		            </div>
+		            <canvas id="tutorial" width="390" height="180"></canvas>
+				</div>
+			</div>
+			<ul class="buttons">
+				<li>En/Dis</li>
+				<li class="empty"></li>
+				<li class="empty"></li>
+				<li class="empty"></li>
+				<li>Start</li>
+				<li class="empty"></li>
+			</ul>
+		</div>
+	</body>
+</html>

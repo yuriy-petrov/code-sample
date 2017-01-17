@@ -1,0 +1,182 @@
+<html>
+	<head>
+		<link href="css/main.css" rel="stylesheet" type="text/css" />
+		<script src="js/jquery.js" type="text/javascript"></script>
+		<script src="js/gauge.js" type="text/javascript"></script>
+		<script src="js/main.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="screen">
+			<div class="one-more">
+				<div class="header">
+					<div class="timer">
+						<div class="weekday">We</div>
+						<div class="date">21/01/04</div>
+						<div class="time">4:08:48</div>
+					</div>
+					<div class="text">LLLLLLLLLL</div>
+					<div class="number">00</div>
+					<table class="data">
+						<tbody>
+							<tr>
+								<td>BASIC_STCD</td>
+								<td>{{BASIC_STCD}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<table class="data paginatable">
+					<tbody>
+						<tr>
+							<td></td>
+							<td class="mem">Mem.</td>
+						</tr>
+						<tr>
+							<td>H2_P_SC_OK</td>
+							<td>{{H2_P_SC_OK}}</td>
+						</tr>
+						<tr>
+							<td>EPS_DOOR_SW_1_OK_M</td>
+							<td>{{EPS_DOOR_SW_1_OK_M}}</td>
+						</tr>
+						<tr>
+							<td>PHC_PR1</td>
+							<td>{{PHC_PR1}}</td>
+						</tr>
+						<tr>
+							<td>C_EPSCS1_OK_M</td>
+							<td>{{C_EPSCS1_OK_M}}</td>
+						</tr>
+						<tr>
+							<td>CS1_T_SW_THYR_OK_M</td>
+							<td>{{CS1_T_SW_THYR_OK_M}}</td>
+						</tr>
+						<tr>
+							<td>CS1_T_SW_DI_OK_M</td>
+							<td>{{CS1_T_SW_DI_OK_M}}</td>
+						</tr>
+						<tr>
+							<td>TSCS1_OK_M</td>
+							<td>{{TSCS1_OK_M}}</td>
+						</tr>
+						<tr>
+							<td>TTCS1_HH_M</td>
+							<td>{{TTCS1_HH_M}}</td>
+						</tr>
+						<tr>
+							<td>TTCS1_LL_M</td>
+							<td>{{TTCS1_LL_M}}</td>
+						</tr>
+						<tr>
+							<td>ITCS1_HH_M</td>
+							<td>{{ITCS1_LL_M}}</td>
+						</tr>
+						<tr>
+							<td>UTCS1A_HH_M</td>
+							<td>{{UTCS1A_HH_M}}</td>
+						</tr>
+						<tr>
+							<td>UTCS1A_LL_M</td>
+							<td>{{UTCS1A_LL_M}}</td>
+						</tr>
+						<tr>
+							<td>UTCS1B_HH_M</td>
+							<td>{{UTCS1B_HH_M}}</td>
+						</tr>
+						<tr>
+							<td>UTCS1B_LL_M</td>
+							<td>{{UTCS1B_LL_M}}</td>
+						</tr>
+						<tr>
+							<td>UTCS1A_LESS_UTCS1B_OK_M</td>
+							<td>{{UTCS1A_LESS_UTCS1B_OK_M}}</td>
+						</tr>
+						<tr>
+							<td>UTCS1A_GREATER_UTCS1B_OK_M</td>
+							<td>{{UTCS1A_GREATER_UTCS1B_OK_M}}</td>
+						</tr>
+						<tr>
+							<td>TS_CS1_FILTER</td>
+							<td>{{TS_CS1_FILTER}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<ul class="buttons">
+				<li>Page -</li>
+				<li>Line -</li>
+				<li>Line +</li>
+				<li>Page +</li>
+				<li class="empty"></li>
+				<li>Reset</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//pagination
+				var startRow = {{first_row}}; //counting starts with 1
+				var lastRow = {{last_row}}; //number of the last line to show
+
+				$.each($('.one-more .paginatable tr'), function(i, row){
+					if(i == 0) return;
+					if(i >= startRow && i <= lastRow) {
+						$(row).show();
+					} else {
+						$(row).hide();
+					}
+				});
+
+				//timer
+				var accessTimer = {
+					init: function(startWith) {
+						//in case you forgot to pass startWith
+						if(typeof startWith == "undefined") {
+							startWith = (new Date()).getTime()/1000;
+						}
+						
+						// you might want to set your own definitions and order based on locale
+						this.weekdays = ["Su", "Mo", "Tu", "We", "Th", "Fr", "St"];	
+						
+						this.timerElement = $(".timer");
+						this.inverval = 1000; //how often to update the clocks
+						this.ticks = 0;
+						if(this.timerElement.length) {
+							this.startWith = startWith*1000;
+							this.weekdayElement = this.timerElement.find(".weekday");
+							this.dateElement = this.timerElement.find(".date");
+							this.timeElement = this.timerElement.find(".time");
+							this.initTicker();
+						}
+					},
+					initTicker: function() {
+						var that = this;
+						this.update();
+						this.ticker = setInterval(function() {
+							that.update();
+						}, this.inverval);
+					},
+					update: function() {
+						var now = new Date(this.startWith + this.ticks*this.inverval);
+						
+						var dateStr = ("0" + now.getDate()).slice(-2) + "/" + ("0" + (now.getMonth() + 1)).slice(-2) + "/" + now.getFullYear().toString().slice(-2);
+						
+						this.dateElement.html(dateStr);
+						
+						var timeStr = ("0" + now.getHours()).slice(-2) + ":" + ("0" +now.getMinutes()).slice(-2) + ":" + ("0" + now.getSeconds()).slice(-2);
+						
+						this.timeElement.html(timeStr);
+						
+						this.weekdayElement.html(this.weekdays[now.getDay()]);
+						
+						this.ticks++;
+					},
+				};
+				
+							
+				// setting current timestamp in seconds; you can set the time you need if you want
+				var startWith = (new Date()).getTime()/1000; 
+				accessTimer.init(startWith);
+			});
+		</script>
+	</body>
+</html>

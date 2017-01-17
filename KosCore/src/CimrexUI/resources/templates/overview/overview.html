@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<link href="css/main.css" rel="stylesheet" type="text/css" />
+		<script src="js/jquery.js" type="text/javascript"></script>
+		<script src="js/gauge.js" type="text/javascript"></script>
+		<script src="js/main.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="screen">
+			<div class="electro">
+				<div class="container">
+					<div class="title">
+						<div class="left">OVERVIEW</div>
+						<div class="right">Unit A</div>
+					</div>
+					<div class="data">
+						<div class="big">{{Mode}}</div>
+						<div class="small-wrap">
+							<div class="small" style="visibility: {{VISIBLE_1}};">
+								<div class="left"> {{TEXT_1}} : </div><div class="right"><br>{{VALUE_1}} {{M1}} </div>
+							</div>
+							<div class="small" style="visibility: {{VISIBLE_2}};">
+								<div class="left"> {{TEXT_2}} :</div><div class="right"><br>{{VALUE_2}} {{M2}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<ul class="buttons">
+				<li>Gassep</li>
+				<li>CS 1/2</li>
+				<li class="empty"></li>
+				<li class="empty"></li>
+				<li class="empty"></li>
+				<li class="empty"></li>
+			</ul>
+		</div>
+	</body>
+</html>

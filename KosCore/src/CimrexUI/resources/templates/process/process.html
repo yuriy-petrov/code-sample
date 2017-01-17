@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="css/main.css" rel="stylesheet" type="text/css" />
+		<script src="js/main.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="screen">
+			<div class="electro">
+				<div class="container">
+					<div class="title">
+						<div class="left">PROCESS SCREEN</div>
+						<div class="right">Unit A</div>
+					</div>
+					<table class="bottom-table">
+			            <tbody>
+			            <tr>
+			                <td>PT Pressure</td>
+			                <td>{{PTGS}}</td>
+			                <td>kPa</td>
+			            </tr>
+			            <tr>
+			                <td>Temp. Cell Stack 1</td>
+			                <td>{{TTCS1}}</td>
+			                <td>&deg;C</td>
+			            </tr>
+			            <tr>
+			                <td>Temp. Cell Stack 2</td>
+			                <td>{{TTCS2}}</td>
+			                <td>&deg;C</td>
+			            </tr>
+			            <tr>
+			                <td>PTU Pressure System User</td>
+			                <td>empty</td>
+			                <td>kPa</td>
+			            </tr>
+			            <tr>
+			                <td>OTA O2 in Atmosphere</td>
+			                <td>{{OTA}}</td>
+			                <td>%</td>
+			            </tr>
+			            <tr>
+			                <td>HTO : H2 in O2</td>
+			                <td>{{HTO}}</td>
+			                <td>%</td>
+			            </tr>
+			            </tbody>
+			        </table>
+				</div>
+			</div>
+			<ul class="buttons">
+				<li>PT</li>
+				<li>TTCS</li>
+				<li>LT's</li>
+				<li>SS</li>
+				<li>HTO</li>
+				<li>Depres</li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,94 @@
+<RCC>
+    <qresource prefix="/images/basicSchemeElements">
+        <file alias="0-0.png">resources/images/basicSchemeElements/0-0.png</file>
+        <file alias="1-0.png">resources/images/basicSchemeElements/1-0.png</file>
+        <file alias="2-0.png">resources/images/basicSchemeElements/2-0.png</file>
+        <file alias="3-0.png">resources/images/basicSchemeElements/3-0.png</file>
+        <file alias="4-0.png">resources/images/basicSchemeElements/4-0.png</file>
+        <file alias="5-0.png">resources/images/basicSchemeElements/5-0.png</file>
+        <file alias="6-0.png">resources/images/basicSchemeElements/6-0.png</file>
+        <file alias="7-0.png">resources/images/basicSchemeElements/7-0.png</file>
+        <file alias="8-0.png">resources/images/basicSchemeElements/8-0.png</file>
+        <file alias="9-0.png">resources/images/basicSchemeElements/9-0.png</file>
+        <file alias="10-0.png">resources/images/basicSchemeElements/10-0.png</file>
+        <file alias="11-0.png">resources/images/basicSchemeElements/11-0.png</file>
+        <file alias="12-0.png">resources/images/basicSchemeElements/12-0.png</file>
+        <file alias="12-1.png">resources/images/basicSchemeElements/12-1.png</file>
+        <file alias="13-0.png">resources/images/basicSchemeElements/13-0.png</file>
+        <file alias="14-0.png">resources/images/basicSchemeElements/14-0.png</file>
+        <file alias="15-0.png">resources/images/basicSchemeElements/15-0.png</file>
+        <file alias="0-0.svg">resources/images/basicSchemeElements/0-0.svg</file>
+        <file alias="1-0.svg">resources/images/basicSchemeElements/1-0.svg</file>
+        <file alias="2-0.svg">resources/images/basicSchemeElements/2-0.svg</file>
+        <file alias="3-0.svg">resources/images/basicSchemeElements/3-0.svg</file>
+        <file alias="4-0.svg">resources/images/basicSchemeElements/4-0.svg</file>
+        <file alias="5-0.svg">resources/images/basicSchemeElements/5-0.svg</file>
+        <file alias="6-0.svg">resources/images/basicSchemeElements/6-0.svg</file>
+        <file alias="7-0.svg">resources/images/basicSchemeElements/7-0.svg</file>
+        <file alias="8-0.svg">resources/images/basicSchemeElements/8-0.svg</file>
+        <file alias="9-0.svg">resources/images/basicSchemeElements/9-0.svg</file>
+        <file alias="10-0.svg">resources/images/basicSchemeElements/10-0.svg</file>
+        <file alias="11-0.svg">resources/images/basicSchemeElements/11-0.svg</file>
+        <file alias="12-0.svg">resources/images/basicSchemeElements/12-0.svg</file>
+        <file alias="12-1.svg">resources/images/basicSchemeElements/12-1.svg</file>
+        <file alias="13-0.svg">resources/images/basicSchemeElements/13-0.svg</file>
+        <file alias="14-0.svg">resources/images/basicSchemeElements/14-0.svg</file>
+        <file alias="15-0.svg">resources/images/basicSchemeElements/15-0.svg</file>
+        <file alias="16-0.png">resources/images/basicSchemeElements/16-0.png</file>
+    </qresource>
+    <qresource prefix="/images/valveSchemeElements">
+        <file alias="0.png">resources/images/valveSchemeElements/0.png</file>
+        <file alias="1.png">resources/images/valveSchemeElements/1.png</file>
+        <file alias="2.png">resources/images/valveSchemeElements/2.png</file>
+        <file alias="3.png">resources/images/valveSchemeElements/3.png</file>
+        <file alias="4.png">resources/images/valveSchemeElements/4.png</file>
+        <file alias="5.png">resources/images/valveSchemeElements/5.png</file>
+        <file alias="6.png">resources/images/valveSchemeElements/6.png</file>
+        <file alias="7.png">resources/images/valveSchemeElements/7.png</file>
+        <file alias="8.png">resources/images/valveSchemeElements/8.png</file>
+        <file alias="9.png">resources/images/valveSchemeElements/9.png</file>
+        <file alias="10.png">resources/images/valveSchemeElements/10.png</file>
+        <file alias="0.svg">resources/images/valveSchemeElements/0.svg</file>
+        <file alias="1.svg">resources/images/valveSchemeElements/1.svg</file>
+        <file alias="2.svg">resources/images/valveSchemeElements/2.svg</file>
+        <file alias="3.svg">resources/images/valveSchemeElements/3.svg</file>
+        <file alias="4.svg">resources/images/valveSchemeElements/4.svg</file>
+        <file alias="5.svg">resources/images/valveSchemeElements/5.svg</file>
+        <file alias="6.svg">resources/images/valveSchemeElements/6.svg</file>
+        <file alias="7.svg">resources/images/valveSchemeElements/7.svg</file>
+        <file alias="8.svg">resources/images/valveSchemeElements/8.svg</file>
+        <file alias="9.svg">resources/images/valveSchemeElements/9.svg</file>
+        <file alias="10.svg">resources/images/valveSchemeElements/10.svg</file>
+        <file alias="11.svg">resources/images/valveSchemeElements/11.svg</file>
+        <file alias="12.svg">resources/images/valveSchemeElements/12.svg</file>
+        <file alias="13.svg">resources/images/valveSchemeElements/13.svg</file>
+        <file alias="14.svg">resources/images/valveSchemeElements/14.svg</file>
+    </qresource>
+    <qresource prefix="/icons">
+        <file alias="document-new.png">resources/images/icons/document-new.png</file>
+        <file alias="document-open.png">resources/images/icons/document-open.png</file>
+        <file alias="document-page-setup.png">resources/images/icons/document-page-setup.png</file>
+        <file alias="document-save.png">resources/images/icons/document-save.png</file>
+        <file alias="quit.png">resources/images/icons/quit.png</file>
+        <file alias="settings.png">resources/images/icons/settings.png</file>
+        <file alias="start.png">resources/images/icons/start.png</file>
+        <file alias="stop.png">resources/images/icons/stop.png</file>
+        <file alias="exercise-start.png">resources/images/icons/exercise-stop.png</file>
+        <file alias="exercise-stop.png">resources/images/icons/exercise-start.png</file>
+        <file alias="go-next.png">resources/images/icons/go-next.png</file>
+        <file alias="go-previous.png">resources/images/icons/go-previous.png</file>
+    </qresource>
+    <qresource prefix="/images/levelSchemeElements">
+        <file alias="0.png">resources/images/levelSchemeElements/0.png</file>
+        <file alias="1.png">resources/images/levelSchemeElements/1.png</file>
+        <file alias="1.svg">resources/images/levelSchemeElements/1.svg</file>
+        <file alias="0.svg">resources/images/levelSchemeElements/0.svg</file>
+    </qresource>
+    <qresource prefix="/images/levels">
+        <file alias="level01.png">resources/images/levels/level01.png</file>
+        <file alias="level02.png">resources/images/levels/level02.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>resources/images/orange-light-alarm-md.png</file>
+    </qresource>
+</RCC>

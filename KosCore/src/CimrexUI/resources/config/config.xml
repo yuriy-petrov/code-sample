@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<controller version="1.0">
+<page id="main">
+    <template file="main.html"/>
+    <available_pages>
+        <page id="access" config="*.xml">
+            <template file="access.html"/>
+            <available_pages>
+                <page id="login">
+                    <template file="login.html"/>
+                    <available_actions>
+                    </available_actions>
+                </page>
+                <page id="logout">
+                    <template file="logout.html"/>
+                    <available_actions>
+                    </available_actions>
+                </page>
+            </available_pages>
+            <available_actions>
+                <action key_code="F_10">
+                    <command type="goto" page_id="login"/>
+                </action>
+                <action key_code="F_11">
+                    <command type="goto" page_id="logout"/>
+                </action>
+                <action key_code="F_12">
+                    <command type="goto" page_id="password"/>
+                </action>
+                <action key_code="F_13">
+                    <command type="goto" page_id="select"/>
+                </action>
+            </available_actions>
+        </page>
+        <page id="select">
+            <template file="select.html"/>
+            <available_pages>
+                <page id="electrolizer">
+                    <template file="electrolizer.html"/>
+                    <available_pages>
+                        <page id="process">
+                            <template file="process.html"/>
+                            <available_pages>
+                                <page id="depress">
+                                    <template file="depress.html"/>
+                                    <available_pages>
+                                        <page id="depresinfo">
+                                            <template file="depresinfo.html"/>
+                                        </page>
+                                    </available_pages>
+                                    <available_actions>
+                                            <action key_code="F_10">
+                                                <command type="goto" page_id="depresinfo"/>
+                                            </action>
+                                            <action key_code="F_11">
+                                                <command type="enable" keys="DEPRESSURISATION_REQUEST"/>
+                                            </action>
+                                    </available_actions>
+                                </page>
+                            </available_pages>
+                            <available_actions>
+                                <action key_code="F_15">
+                                    <command type="goto" page_id="depress"/>
+                                </action>
+                            </available_actions>
+                        </page>
+                        <page id="production">
+                            <template file="production.html"/>
+                            <available_pages>
+                                <page id="setpoints">
+                                    <template file="setpoints.html"/>
+                                </page>
+                                <page id="selectionCS">
+                                    <template file="selectionCS.html"/>
+                                <available_pages>
+                                </available_pages>
+                                <available_actions>
+                                        <action key_code="F_10">
+                                            <command type="invert" key="CS1_ENABLE"/>
+                                        </action>
+                                        <action key_code="F_11">
+                                            <command type="invert" key="CS2_ENABLE"/>
+                                        </action>
+                                        <action key_code="F_14">
+                                            <command type="enable" keys="CS1_ENABLE CS2_ENABLE"/>
+                                        </action>
+                                        <action key_code="F_15">
+                                            <command type="disable" keys="CS1_ENABLE CS2_ENABLE"/>
+                                        </action>
+                                </available_actions>
+                                </page>
+                            </available_pages>
+                            <available_actions>
+                                <action key_code="F_10">
+                                    <command type="goto" page_id="setpoints"/>
+                                </action>
+                                <action key_code="F_11">
+                                    <command type="goto" page_id="selectionCS"/>
+                                </action>
+                            </available_actions>
+                        </page>
+                        <page id="water">
+                            <template file="water.html"/>
+                            <available_pages>
+                                <page id="demin">
+                                    <template file="demin.html"/>
+                                    <available_pages>
+                                        <page id="breaktank">
+                                            <template file="breaktank.html"/>
+                                            <available_pages>
+                                            </available_pages>
+                                            <available_actions>
+                                            </available_actions>
+                                        </page>
+                                    </available_pages>
+                                    <available_actions>
+                                        <action key_code="F_10">
+                                            <command type="goto" page_id="breaktank"/>
+                                        </action>
+                                    </available_actions>
+                                </page>
+                                <page id="cool">
+                                    <template file="cool.html"/>
+                                    <available_pages>
+                                        <page id="clcsystem">
+                                            <template file="clcsystem.html"/>
+                                            <available_pages>
+                                            </available_pages>
+                                            <available_actions>
+                                            </available_actions>
+                                        </page>
+                                    </available_pages>
+                                    <available_actions>
+                                        <action key_code="F_10">
+                                            <command type="goto" page_id="clcsystem"/>
+                                        </action>
+                                    </available_actions>
+                                </page>
+                            </available_pages>
+                            <available_actions>
+                                <action key_code="F_13">
+                                    <command type="goto" page_id="demin"/>
+                                </action>
+                                <action key_code="F_15">
+                                    <command type="goto" page_id="cool"/>
+                                </action>
+                            </available_actions>
+                        </page>
+                    </available_pages>
+                    <available_actions>
+                        <action key_code="F_10">
+                            <command type="goto" page_id="process"/>
+                        </action>
+                        <action key_code="F_11">
+                            <command type="goto" page_id="cs"/>
+                        </action>
+                        <action key_code="F_12">
+                            <command type="goto" page_id="production"/>
+                        </action>
+                        <action key_code="F_13">
+                            <command type="goto" page_id="water"/>
+                        </action>
+                    </available_actions>
+                </page>
+                <page id="eps">
+                    <template file="eps.html"/>
+                        <available_pages>
+                        </available_pages>
+                        <available_actions>
+                        </available_actions>
+                </page>
+                <page id="overview">
+                    <template file="overview.html"/>
+                        <available_pages>
+                            <page id="gasseparator">
+                                <template file="gasseparator.html"/>
+                                    <available_pages>
+                                    </available_pages>
+                                    <available_actions>
+                                    </available_actions>
+                            </page>
+                        </available_pages>
+                        <available_actions>
+                            <action key_code="F_10">
+                                <command type="goto" page_id="gasseparator"/>
+                            </action>
+                        </available_actions>
+                </page>
+            </available_pages>
+            <available_actions>
+                <action key_code="F_10">
+                    <command type="goto" page_id="electrolizer"/>
+                </action>
+                <action key_code="F_11">
+                    <command type="goto" page_id="eps"/>
+                </action>
+                <action key_code="F_14">
+                    <command type="goto" page_id="data"/>
+                </action>
+                <action key_code="F_15">
+                    <command type="goto" page_id="overview"/>
+                </action>
+            </available_actions>
+        </page>
+        <page id="alarms">
+            <template file="alarms.html"/>
+            <available_pages>
+                <page id="startconditions">
+                    <template file="startconditions.html"/>
+                    <available_pages>
+                        <page id="basic">
+                            <template file="basic.html"/>
+                            <available_actions>
+                                <action key_code="F_10">
+                                    <command type="line_down" step="8"/>
+                                </action>
+                                <action key_code="F_11">
+                                    <command type="line_down" step="1"/>
+                                </action>
+                                <action key_code="F_12">
+                                    <command type="line_up" step="1"/>
+                                </action>
+                                <action key_code="F_13">
+                                    <command type="line_up" step="8"/>
+                                </action>
+                            </available_actions>
+                        </page>
+                        <page id="n2purgebasic">
+                            <template file="n2purgebasic.html"/>
+                            <available_actions>
+                                <action key_code="F_10">
+                                    <command type="line_down" step="8"/>
+                                </action>
+                                <action key_code="F_11">
+                                    <command type="line_down" step="1"/>
+                                </action>
+                                <action key_code="F_12">
+                                    <command type="line_up" step="1"/>
+                                </action>
+                                <action key_code="F_13">
+                                    <command type="line_up" step="8"/>
+                                </action>
+                            </available_actions>
+                        </page>
+                        <page id="h2productionbasic">
+                            <template file="h2productionbasic.html"/>
+                            <available_actions>
+                                <action key_code="F_10">
+                                    <command type="line_down" step="8"/>
+                                </action>
+                                <action key_code="F_11">
+                                    <command type="line_down" step="1"/>
+                                </action>
+                                <action key_code="F_12">
+                                    <command type="line_up" step="1"/>
+                                </action>
+                                <action key_code="F_13">
+                                    <command type="line_up" step="8"/>
+                                </action>
+                            </available_actions>
+                        </page>
+                        <page id="cs1basic">
+                            <template file="cs1basic.html"/>
+                            <available_actions>
+                                <action key_code="F_10">
+                                    <command type="line_down" step="8"/>
+                                </action>
+                                <action key_code="F_11">
+                                    <command type="line_down" step="1"/>
+                                </action>
+                                <action key_code="F_12">
+                                    <command type="line_up" step="1"/>
+                                </action>
+                                <action key_code="F_13">
+                                    <command type="line_up" step="8"/>
+                                </action>
+                            </available_actions>
+                        </page>
+                        <page id="cs2basic">
+                            <template file="cs2basic.html"/>
+                            <available_actions>
+                                <action key_code="F_10">
+                                    <command type="line_down" step="8"/>
+                                </action>
+                                <action key_code="F_11">
+                                    <command type="line_down" step="1"/>
+                                </action>
+                                <action key_code="F_12">
+                                    <command type="line_up" step="1"/>
+                                </action>
+                                <action key_code="F_13">
+                                    <command type="line_up" step="8"/>
+                                </action>
+                            </available_actions>
+                        </page>
+                    </available_pages>
+                    <available_actions>
+                        <action key_code="F_1">
+                            <command type="goto" page_id="basic"/>
+                        </action>
+                        <action key_code="F_2">
+                            <command type="goto" page_id="n2purgebasic"/>
+                        </action>
+                        <action key_code="F_10">
+                            <command type="goto" page_id="comp"/>
+                        </action>
+                        <action key_code="F_11">
+                            <command type="goto" page_id="h2productionbasic"/>
+                        </action>
+                        <action key_code="F_12">
+                            <command type="goto" page_id="cs1basic"/>
+                        </action>
+                        <action key_code="F_13">
+                            <command type="goto" page_id="cs2basic"/>
+                        </action>
+                        <action key_code="F_14">
+                            <command type="goto" page_id="cs3"/>
+                        </action>
+                        <action key_code="F_15">
+                            <command type="goto" page_id="cs4"/>
+                        </action>
+                    </available_actions>
+                </page>
+            </available_pages>
+            <available_actions>
+                <action key_code="F_10">
+                    <command type="goto" page_id="buzz"/>
+                </action>
+                <action key_code="F_11">
+                    <command type="goto" page_id="h_bw"/>
+                </action>
+                <action key_code="F_12">
+                    <command type="goto" page_id="startconditions"/>
+                </action>
+                <action key_code="F_14">
+                    <command type="goto" page_id="pre_al"/>
+                </action>
+                <action key_code="F_15">
+                    <command type="goto" page_id="first"/>
+                </action>
+                <action key_code="F_16">
+                    <command type="goto" page_id="reset"/>
+                </action>
+            </available_actions>
+        </page>
+        <page id="debug">
+            <template file="debug.html"/>
+            <available_actions>
+                <action key_code="F_10">
+                    <command type="increment_value" step="10"/>
+                </action>
+                <action key_code="F_11">
+                    <command type="increment_value" step="1"/>
+                </action>
+                <action key_code="F_12">
+                    <command type="decrement_value" step="1"/>
+                </action>
+                <action key_code="F_13">
+                    <command type="decrement_value" step="10"/>
+                </action>
+            </available_actions>
+        </page>
+    </available_pages>
+    <available_actions>
+        <action key_code="F_1">
+            <command type="increment_value" step="1"/>
+        </action>
+        <action key_code="F_2">
+            <command type="increment_value" step="10" value="Tot_Prod"/>
+        </action>
+        <action key_code="F_3">
+            <command type="increment_value" step="100" value="value1"/>
+        </action>
+        <action key_code="F_4">
+            <command type="off_value" value="value4"/>
+        </action>
+        <action key_code="F_5">
+            <command type="send_value_to_model"/>
+        </action>
+        <action key_code="F_6">
+            <command type="decrement_value" step="10" value="Tot_Prod"/>
+        </action>
+        <action key_code="F_7">
+            <command type="decrement_value" step="150" value="value1"/>
+        </action>
+        <action key_code="F_10">
+            <command type="goto" page_id="access"/>
+        </action>
+        <action key_code="F_11">
+            <command type="goto" page_id="select"/>
+        </action>
+        <action key_code="F_12">
+            <command type="goto" page_id="events"/>
+        </action>
+        <action key_code="F_13">
+            <command type="goto" page_id="alarms"/>
+        </action>
+        <action key_code="F_14">
+            <command type="goto" page_id="info"/>
+        </action>
+        <action key_code="F_15">
+            <command type="goto" page_id="debug"/>
+        </action>
+    </available_actions>
+</page>
+<default_actions>
+    <action key_code="F_9">
+            <command type="go_default" param="page_id" page_id="alarms"/>
+        </action>
+    <action key_code="F_16">
+            <command type="go_back"/>
+    </action>
+</default_actions>
+</controller>
